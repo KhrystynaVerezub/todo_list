@@ -1,0 +1,60 @@
+[33mcommit 75d8db0997a7e7e98d7a25e3a08ef51b6aac2e89[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Verezub Khristina <k.le-fay@yandex.ru>
+Date:   Mon Jan 8 21:58:55 2024 +0300
+
+    Добавлен файл gitignore, добавлены исключение
+
+[33mcommit 714ea431b12fdd7313af4a3f07213f3889ae494b[m
+Author: Verezub Khristina <k.le-fay@yandex.ru>
+Date:   Sat Jan 6 20:58:12 2024 +0300
+
+    Добавлено описание отката коммитов
+
+[33mcommit ab29fe8bd5f754be357485e91546c7343bfe6ca1[m
+Author: Verezub Khristina <k.le-fay@yandex.ru>
+Date:   Sat Jan 6 18:05:11 2024 +0300
+
+    git push
+    Q
+
+[33mcommit a72e2283ee5f90a870953187be8ca3d5bf334344[m
+Author: Verezub Khristina <k.le-fay@yandex.ru>
+Date:   Sat Jan 6 18:04:34 2024 +0300
+
+    info: Дополнить инфу про git status
+
+[33mcommit 17d6ab34ed15b7d8f309028c54bc0b95ced3de10[m
+Author: Verezub Khristina <k.le-fay@yandex.ru>
+Date:   Sat Jan 6 18:02:55 2024 +0300
+
+    info: Дополнить инфу про git log
+
+[33mcommit f63aa7a1a7d8f1f1c3fac2293642fae40c28ccd6[m
+Author: Verezub Khristina <k.le-fay@yandex.ru>
+Date:   Sat Jan 6 17:58:42 2024 +0300
+
+    info: Добавтьь раздел про HEAD
+
+[33mcommit 23add224a87940faa93a71f732163f9f88aad400[m
+Author: Verezub Khristina <k.le-fay@yandex.ru>
+Date:   Thu Jan 4 22:41:27 2024 +0300
+
+    Добавлен файл со шпаргалкой по Markdown
+
+[33mcommit f92329cb1c1c0729463d484970dae6c96f73a482[m
+Author: Verezub Khristina <k.le-fay@yandex.ru>
+Date:   Tue Jan 2 22:14:56 2024 +0300
+
+    Добавлен файл со список работ
+
+[33mcommit 24f5bfb3e5d99371fd1fc653f13d2877a7570a3b[m
+Author: Verezub Khristina <k.le-fay@yandex.ru>
+Date:   Mon Jan 1 22:28:51 2024 +0300
+
+    Добавлен текст про рекламу
+
+[33mcommit 9da5c97db239756b8e9b96b9669c6e999dddd9c5[m
+Author: Verezub Khristina <k.le-fay@yandex.ru>
+Date:   Mon Jan 1 22:22:12 2024 +0300
+
+    My first commit
