@@ -22,10 +22,17 @@ addButton.addEventListener('click', function(){
 });
 
 //функция для вывода дел на страницу
-//перебираем наш массив todoList и каждый объект выводим в качестве тега списка li
+//перебираем объекты в массиве todoList выводит в качестве тега списка li
 // forEach - метод перебора. Принимает параметр колбек функцию (3 элемента или сколько объектов в массиве)
 function displayMessages(){
-    todoList.forEach(function(item, index){
-        console.log(item);
+
+    todoList.forEach(function(item, i){
+        let displayMessage = `
+        <li>
+            <input type='checkbox' id='item_${i}'>
+            <label for='item_${i}'>${item.todo}</label>
+        </li>
+        `;
+        todo.innerHTML = displayMessage;
     })
 }
