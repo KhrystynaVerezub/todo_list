@@ -6,6 +6,12 @@ let addMessage = document.querySelector('.message'),
 //пустой массив для хранения сообщений
 let todoList = [];
 
+//пишем скрипт чтоб возращать данные из Локал Сторедж и выводим на страницу
+if(localStorage.getItem('todo')){
+    todoList = JSON.parse(localStorage.getItem('todo'));
+    displayMessages();
+}
+
 //добавляем функцию обработчик событий
 //addEventListener - отслеживает клик и запискает следующую функцию
 //для сообщений создаем массив newTodo и на выходе он отдаст объект
@@ -19,20 +25,38 @@ addButton.addEventListener('click', function(){
 
     todoList.push(newTodo);
     displayMessages();
+    localStorage.setItem('todo', JSON.stringify(todoList));
 });
 
 //функция для вывода дел на страницу
 //перебираем объекты в массиве todoList выводит в качестве тега списка li
 // forEach - метод перебора. Принимает параметр колбек функцию (3 элемента или сколько объектов в массиве)
 function displayMessages(){
+    let displayMessage = "";
 
     todoList.forEach(function(item, i){
-        let displayMessage = `
+        displayMessage += `
         <li>
-            <input type='checkbox' id='item_${i}'>
+            <input type='checkbox' id='item_${i}' ${item.checked ? 'checked' : ''}>
             <label for='item_${i}'>${item.todo}</label>
         </li>
         `;
         todo.innerHTML = displayMessage;
     })
 }
+
+//навешиваем события на весь список li
+todo.addEventListener('change', function(event){
+    let idInput = event.target.getAttribute('id');
+
+    let forLabel = todo.querySelector('[for=' + idInput + ']');
+    let valueLabel = forLabel.innerHTML;
+
+    todoList.forEach(function(item){
+        if (item.todo === valueLabel){
+            item.checked = !item.checked;
+            localStorage.setItem('todo', JSON.stringify(todoList));
+        }
+    });
+    // console.log('forLabel: ', valueLabel);
+});
