@@ -38,7 +38,7 @@ function displayMessages(){
         displayMessage += `
         <li>
             <input type='checkbox' id='item_${i}' ${item.checked ? 'checked' : ''}>
-            <label for='item_${i}'>${item.todo}</label>
+            <label for='item_${i}' class='${item.important ? 'important' : ''}'>${item.todo}</label>
         </li>
         `;
         todo.innerHTML = displayMessage;
@@ -58,5 +58,18 @@ todo.addEventListener('change', function(event){
             localStorage.setItem('todo', JSON.stringify(todoList));
         }
     });
-    // console.log('forLabel: ', valueLabel);
+});
+
+// будем отключать дефолтное меню при клике правой кнопкой мыши на список
+// при клике пкм будет перебираться весь массив. Когда будет находить совпадение, то меняет значение important
+todo.addEventListener('contextmenu', function(event){
+    event.preventDefault();
+    todoList.forEach(function(item){
+        if(item.todo === event.target.innerHTML){
+            item.important = !item.important;
+            displayMessages();
+            localStorage.setItem('todo', JSON.stringify(todoList));
+        };
+
+    });
 });
