@@ -16,6 +16,7 @@ if(localStorage.getItem('todo')){
 //addEventListener - отслеживает клик и запискает следующую функцию
 //для сообщений создаем массив newTodo и на выходе он отдаст объект
 addButton.addEventListener('click', function(){
+    if(!addMessage.value) return;
 
     let newTodo = {
         todo: addMessage.value,
@@ -26,6 +27,7 @@ addButton.addEventListener('click', function(){
     todoList.push(newTodo);
     displayMessages();
     localStorage.setItem('todo', JSON.stringify(todoList));
+    addMessage.value = '';
 });
 
 //функция для вывода дел на страницу
@@ -34,6 +36,7 @@ addButton.addEventListener('click', function(){
 function displayMessages(){
     let displayMessage = "";
 
+    if(todoList.length === 0) todo.innerHTML = '';
     todoList.forEach(function(item, i){
         displayMessage += `
         <li>
@@ -64,9 +67,13 @@ todo.addEventListener('change', function(event){
 // при клике пкм будет перебираться весь массив. Когда будет находить совпадение, то меняет значение important
 todo.addEventListener('contextmenu', function(event){
     event.preventDefault();
-    todoList.forEach(function(item){
+    todoList.forEach(function(item, i){
         if(item.todo === event.target.innerHTML){
-            item.important = !item.important;
+            if(event.ctrlKey || event.metaKey){
+                todoList.splice(i, 1);
+            }else{
+                item.important = !item.important;
+            }
             displayMessages();
             localStorage.setItem('todo', JSON.stringify(todoList));
         };
